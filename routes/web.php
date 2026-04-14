@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/admin/schedules/create', [AdminScheduleController::class, 'create']);
 Route::post('/admin/schedules/store', [AdminScheduleController::class, 'store']);
 Route::get('/admin/schedules/edit/{id}', [AdminScheduleController::class, 'edit']);
-Route::put('/admin/schedules/update/{id}', [AdminScheduleController::class, 'update']);
+Route::match(['post', 'put'], '/admin/schedules/update/{id}', [AdminScheduleController::class, 'update']);
 Route::get('/admin/schedules/delete/{id}', [AdminScheduleController::class, 'destroy']);
 
 Route::middleware('auth')->group(function () {

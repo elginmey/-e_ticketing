@@ -211,6 +211,7 @@
 
             <form action="/admin/schedules/update/{{ $schedule->id }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="form-grid">
 
                     <div class="form-group full-width">
